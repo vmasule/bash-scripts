@@ -40,3 +40,21 @@ First find out list of shells installed using `chsh -l` or `cat /etc/shells` com
 chsh -s /bin/bash  # or /bin/sh if want to use sh shell. 
 ```
 
+#### Update bash shell
+
+For Debian
+
+```
+apt-get update && apt-get install bash bash-completion bash-doc
+```
+
+For RedHat
+```
+yum update bash
+```
+
+#### How to merge content of two files into one
+This can be done using cat command
+```
+cat file1 file2 > file3
+```
