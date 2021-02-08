@@ -94,3 +94,14 @@ noisy > /dev/null 2>&1
 ```
 
 Note: `/dev/null` is a bit bucket(special device) where we can dump unwanted data. Any data written there is simply thrown away.
+
+#### How to save or grouping output from several commands
+```
+pwd; ls; cd ../elsewhere; pwd; ls > /temp/all.out  #! Only last command output is redirected
+
+#Use Brace grouping
+{ pwd; ls; cd ../elsewhere; pwd; ls; } > /temp/all.out  #All commands output is redirected usig brace {} grouping.
+
+#Use parenthesis
+(pwd; ls; cd ../elsewhere; pwd ls) > /temp/all.out   # Parenthesis opens a subshell and no need to take care od spaces and semicolon for last command. 
+```
