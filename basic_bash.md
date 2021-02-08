@@ -58,3 +58,39 @@ This can be done using cat command
 ```
 cat file1 file2 > file3
 ```
+
+#### Output error into error file
+
+```
+myprogram 1> message.out 2> message.err
+```
+
+Whereas 1> is STDOUT and 2> is STDERR and 0 means STDIN. When no number is specified then STDOUT is assumed.
+
+#### Sending output and error to same file
+```
+both >& outfile # This is prefred but below also possible
+
+#Or
+
+both &> outfile
+
+# Or older and slightly more verbose
+both > outfile 2>&1  # Here 2>& all has to appear together
+```
+
+Note: here `both` is ref program or script whose output and error willbe redirected to same file. And for appending one can either use `ls >> ls.out 2>&1` or `ls &>> ls.out` if using bash v4 or higher 
+
+#### Throwing Output away or ignoring it
+Some time output of the command/program need to be descarded, and that can be achieved using below two options
+
+Redirect the output to `/dev/null`
+```
+find / -name myfile -print 2> /dev/null
+
+# OR
+
+noisy > /dev/null 2>&1
+```
+
+Note: `/dev/null` is a bit bucket(special device) where we can dump unwanted data. Any data written there is simply thrown away.
