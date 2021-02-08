@@ -9,6 +9,26 @@ pwd -P 	# Shows physical path used for symlinks
 ```
 Note: `-L` and `-P` can also be used for `cd` command
 
-####  
+#### Find and run command under bash
+Use `type`, `which`, `locate`, `slocate`, `apropos`, `find`, `ls` commands.
 
+```
+type which
+ type ls
+type -a ls
+```
+
+Some commands look into aliases & $PATH, builtins ... etc.
+
+#### Getting information about file
+ Use command `stat`, `ls`, `file` etc.
+
+#### Showing all hidden files including dot files
+Use `ls -d` instead of `ls -a` as later is more noisy.
+```
+ls -d
+```
+Note: Use `-A` with `ls` command as it ignores two dot directories. And without above command `grep -; 'PATH' `can be used.
+
+ 
 
